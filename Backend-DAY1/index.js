@@ -17,6 +17,11 @@ app.get("/home", (req, res) => {
     res.send("This is a Home")
 });
 
+app.get('/about', (req,res) => {
+  res.send('I am Student for CSE Brach')
+})
+
+
 app.listen(8000, () => {
-  log("Running on PORT : 8000");
+  console.log("Running on PORT : 8000");
 });
