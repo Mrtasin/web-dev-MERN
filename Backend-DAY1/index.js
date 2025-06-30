@@ -1,0 +1,22 @@
+import express from "express";
+
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("Hello Dosto");
+});
+
+app.get("/tasincoder", (req, res) => {
+  res.send("Tasin Coder");
+});
+app.get("/rajan", (req, res) => {
+  res.send("Rajan Coder");
+});
+
+app.get("/home", (req, res) => {
+    res.send("This is a Home")
+});
+
+app.listen(8000, () => {
+  log("Running on PORT : 8000");
+});

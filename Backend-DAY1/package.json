@@ -1,0 +1,18 @@
+{
+  "name": "dome",
+  "version": "1.0.0",
+  "description": "testing backend project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Tasin Coder",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
