@@ -1,8 +1,9 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import { registerUser } from "./src/controllers/auth.controllers.js";
 
+import authRoutes from "./src/routes/auth.routes.js";
+import db from "./src/utils/db.js";
 dotenv.config();
 
 const port = process.env.PORT;
@@ -19,6 +20,8 @@ app.use(
   })
 );
 
+db();
+
 const helth = (req, res) => {
   res.status(200).json({
     message: "Helth Check Successfully",
@@ -26,12 +29,9 @@ const helth = (req, res) => {
   });
 };
 
-
-
 app.get("/", helth);
 
-
-app.post("/register", registerUser)
+app.use("/api/v1/users", authRoutes);
 
 app.listen(port, () => {
   console.log("Server is Running on port : ", port);
